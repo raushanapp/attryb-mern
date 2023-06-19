@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const userSchema = new mongoose.Schema(
   {
     firstName: { type: String, required: true, min: 2, max: 50 },
-    firstLast: { type: String, required: true, min: 2, max: 50 },
+    lastName: { type: String, required: true, min: 2, max: 50 },
     email: {
       type: String,
       required: [true, "please provide a email"],
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    versionkey: false,
+    versionKey: false,
   }
 );
 userSchema.pre("save", async function (next) {
